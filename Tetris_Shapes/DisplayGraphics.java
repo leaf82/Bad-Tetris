@@ -24,7 +24,15 @@ public class DisplayGraphics extends  Canvas{
         g.fillArc(30, 130, 40,50,180,40);  
           
     }
+    
+    public void block(Graphics g)
+    {
+        int sideLen = 10;
+        int xCord = 0;
+        int yCord = 0;
 
+        g.fillRect(xCord, yCord, sideLen, sideLen);
+    }
     public static void main(String[] args) {  
         DisplayGraphics m=new DisplayGraphics();  
         JFrame f=new JFrame();  
