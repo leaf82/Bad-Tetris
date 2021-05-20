@@ -2,7 +2,7 @@ package Tetris_Shapes;
 import javax.swing.*;
 import java.awt.*;
 public class Screen extends  JPanel{
-    final int spacer = 30;
+    private final int spacer = 30;
     public int getSpacer()
     {
         return spacer;
@@ -17,7 +17,6 @@ public class Screen extends  JPanel{
                 g.drawRect(x, i, (spacer), (spacer));
             }
         }
-        
         setForeground(Color.black);
     }
     //10x20
