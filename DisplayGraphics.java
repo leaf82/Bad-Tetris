@@ -1,19 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 public class DisplayGraphics extends  Canvas{
-
-    // Nested static class to do the coordinate math, we can move this wherever we need
-    // The CoordMath class needs to be nested FYI
-    private static class CoordMath {
-        public static int xMath(int fullCoord) {
-            return (int)fullCoord/10000;
-        }
-    
-        public static int yMath(int fullCoord) {
-            return fullCoord%10000;
-        }
-    }
-
     /*
     public static void main(String[] args) {  
         JFrame f=new JFrame("Button Example");
@@ -46,7 +33,7 @@ public class DisplayGraphics extends  Canvas{
         //f.setLayout(null);  
         f.setVisible(true);
         int testCoord = 12001400;
-        
+
         // Testing CoordMath
         System.out.println(CoordMath.xMath(testCoord));
         System.out.println(CoordMath.yMath(testCoord));
