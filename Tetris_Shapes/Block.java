@@ -17,9 +17,18 @@ public class Block {
         this.rgbColor = rgb;
     }
 
+    public int getXCoord() {
+        return this.xCoord;
+    }
+
+    public int getYCoord() {
+        return this.yCoord;
+    }
+
     // move the block along X axis
     public boolean setX(int newX) {
-        if (/*can move*/) {
+        boolean test = true;
+        if (test/*can move*/) {
             //move block
             this.xCoord = newX;
             return true;
@@ -30,7 +39,8 @@ public class Block {
 
     // move the block along Y axis
     public boolean setY(int newY) {
-        if (/*can move*/) {
+        boolean test = true;
+        if (test/*can move*/) {
             //move block
             this.yCoord = newY;
             return true;
