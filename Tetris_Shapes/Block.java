@@ -8,13 +8,13 @@ public class Block {
     private int xCoord;
     private int yCoord;
 
-    private final int sideLen = 80; //size of block
-    private int[] rgbColor = new int[3]; //Array for RGB
+    private final int sideLen = 80; //size of block TBD
+    private String color; //in the format for Color.decode i.e. #000000 for black
 
-    public Block(int x, int y, int[] rgb) {
+    public Block(int x, int y, String color) {
         this.xCoord = x;
         this.yCoord = y;
-        this.rgbColor = rgb;
+        this.color = color;
     }
 
     public int getXCoord() {
