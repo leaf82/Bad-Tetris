@@ -1,10 +1,15 @@
 package Tetris_Shapes;
 import javax.swing.*;
 import java.awt.*;
-public class Screen extends  JPanel{    
+public class Screen extends  JPanel{
+    final int spacer = 30;
+    public int getSpacer()
+    {
+        return spacer;
+    }
+
     public void paint(Graphics g) {    
         setBackground(Color.GRAY);
-        final int spacer = 30;
         for(int i = getHeight()/2 - (spacer * 10); i < getHeight()/2 + (spacer * 10); i += spacer)
         {
             for(int x = getWidth()/2 - (spacer * 5); x < getWidth()/2 + (spacer * 5); x += (spacer))
@@ -21,7 +26,7 @@ public class Screen extends  JPanel{
         JFrame f=new JFrame();
         f.add(m);
         final int side = 800;
-        f.setSize(800, 800);
+        f.setSize(side, side);
         f.setVisible(true);
     }
 }
