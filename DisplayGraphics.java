@@ -1,4 +1,3 @@
-package Tetris_Shapes;
 import javax.swing.*;
 import java.awt.*;
 public class DisplayGraphics extends  Canvas{
@@ -14,8 +13,9 @@ public class DisplayGraphics extends  Canvas{
     }  
     */
     
-    public void paint(Graphics g) {    
-        setBackground(Color.decode("#000000"));  
+    public void paint(Graphics g) {
+        setBackground(Color.decode("#000000"));
+        //System.out.println(Color.decode("#000000"));
         g.fillRect(130, 30,100, 80);  
         g.fillRect(230,30,50, 10);  
         setForeground(Color.BLUE);  
@@ -39,6 +39,11 @@ public class DisplayGraphics extends  Canvas{
         f.add(m);  
         f.setSize(400,400);  
         //f.setLayout(null);  
-        f.setVisible(true);  
+        f.setVisible(true);
+        int testCoord = 12001400;
+
+        // Testing CoordMath
+        System.out.println(CoordMath.xMath(testCoord));
+        System.out.println(CoordMath.yMath(testCoord));
     }
 }
