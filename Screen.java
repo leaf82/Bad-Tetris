@@ -9,6 +9,7 @@ public class Screen extends  JPanel implements ActionListener{
     Timer time = new Timer(1000, this); 
     int y = 0, yVel = 30; // Starting value and the amount its increased
     
+
     public int getSpacer()
     {
         return spacer;
@@ -22,10 +23,10 @@ public class Screen extends  JPanel implements ActionListener{
         repaint();
     }
 
-    public void paintGrid(Graphics g) {   
+    public void paintComponent(Graphics g) {   
         super.paintComponent(g); // Properly refreshes
         setBackground(Color.GRAY); // Background color
-        setForeground(Color.black); // Color of things drawn
+        
 
         //Prints a grid for the blocks to move across
         for(int i = getHeight()/2 - (spacer * 10); i < getHeight()/2 + (spacer * 10); i += spacer)
@@ -39,12 +40,12 @@ public class Screen extends  JPanel implements ActionListener{
         /* Making a line piece using a var for the y value
            to allow it to be redrawn and moved
         */
-
         g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer, spacer);
         g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer * 2, spacer);
         g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer * 3, spacer);
         g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer * 4, spacer);
-        
+        setForeground(Color.black); // Color of things drawn
+
         // Starts the timer causing the blocks to fall
         if(y + getHeight()/2 - (spacer * 10) == (getHeight()/2 + (spacer * 10)) - 30)
         {
@@ -58,9 +59,10 @@ public class Screen extends  JPanel implements ActionListener{
     public static void main(String[] args) {
         Screen m=new Screen();
         JFrame f=new JFrame();
+        int side = 800;
         f.add(m);
-        final int side = 800;
         f.setSize(side, side);
         f.setVisible(true);
+
     }
 }
