@@ -1,13 +1,14 @@
 import javax.swing.*;
 import java.awt.*;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Screen extends  JPanel implements ActionListener{
     private final int spacer = 30;
-    Timer time = new Timer(200, this);
-    int y = 0, yVel = 30;
-
+    Timer time = new Timer(1000, this); 
+    int y = 0, yVel = 30; // Starting value and the amount its increased
+    
     public int getSpacer()
     {
         return spacer;
@@ -17,12 +18,16 @@ public class Screen extends  JPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
         y += yVel;
-        
+
         repaint();
     }
 
-    public void paint(Graphics g) {    
-        setBackground(Color.GRAY);
+    public void paintGrid(Graphics g) {   
+        super.paintComponent(g); // Properly refreshes
+        setBackground(Color.GRAY); // Background color
+        setForeground(Color.black); // Color of things drawn
+
+        //Prints a grid for the blocks to move across
         for(int i = getHeight()/2 - (spacer * 10); i < getHeight()/2 + (spacer * 10); i += spacer)
         {
             for(int x = getWidth()/2 - (spacer * 5); x < getWidth()/2 + (spacer * 5); x += (spacer))
@@ -30,9 +35,17 @@ public class Screen extends  JPanel implements ActionListener{
                 g.drawRect(x, i, (spacer), (spacer));
             }
         }
-        g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer, spacer);
-        setForeground(Color.black);
 
+        /* Making a line piece using a var for the y value
+           to allow it to be redrawn and moved
+        */
+
+        g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer, spacer);
+        g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer * 2, spacer);
+        g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer * 3, spacer);
+        g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer * 4, spacer);
+        
+        // Starts the timer causing the blocks to fall
         if(y + getHeight()/2 - (spacer * 10) == (getHeight()/2 + (spacer * 10)) - 30)
         {
             time.stop();
@@ -40,6 +53,7 @@ public class Screen extends  JPanel implements ActionListener{
             time.start();
         }
     }
+
     //10x20
     public static void main(String[] args) {
         Screen m=new Screen();
