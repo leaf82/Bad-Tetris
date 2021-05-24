@@ -1,4 +1,3 @@
-package Tetris_Shapes;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,8 +5,8 @@ import java.awt.event.ActionListener;
 
 public class Screen extends  JPanel implements ActionListener{
     private final int spacer = 30;
-    Timer time = new Timer(5, this);
-    int y = 0, yVel = 2;
+    Timer time = new Timer(200, this);
+    int y = 0, yVel = 30;
 
     public int getSpacer()
     {
@@ -40,7 +39,6 @@ public class Screen extends  JPanel implements ActionListener{
         } else {
             time.start();
         }
-        
     }
     //10x20
     public static void main(String[] args) {
