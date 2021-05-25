@@ -8,12 +8,6 @@ public class Screen extends  JPanel implements ActionListener{
     private final int spacer = 30;
     Timer time = new Timer(1000, this); 
     int y = 0, yVel = 30; // Starting value and the amount its increased
-    
-
-    public int getSpacer()
-    {
-        return spacer;
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -29,7 +23,7 @@ public class Screen extends  JPanel implements ActionListener{
         
 
         //Prints a grid for the blocks to move across
-        for(int i = getHeight()/2 - (spacer * 10); i < getHeight()/2 + (spacer * 10); i += spacer)
+        for(int y = getHeight()/2 - (spacer * 10); y < getHeight()/2 + (spacer * 10); y += spacer)
         {
             for(int x = getWidth()/2 - (spacer * 5); x < getWidth()/2 + (spacer * 5); x += (spacer))
             {

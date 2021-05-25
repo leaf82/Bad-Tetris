@@ -40,10 +40,5 @@ public class DisplayGraphics extends  Canvas{
         f.setSize(400,400);  
         //f.setLayout(null);  
         f.setVisible(true);
-        int testCoord = 12001400;
-
-        // Testing CoordMath
-        System.out.println(CoordMath.xMath(testCoord));
-        System.out.println(CoordMath.yMath(testCoord));
     }
 }
