@@ -33,7 +33,7 @@ public class Screen extends  JPanel implements ActionListener{
         {
             for(int x = getWidth()/2 - (spacer * 5); x < getWidth()/2 + (spacer * 5); x += (spacer))
             {
-                g.drawRect(x, i, (spacer), (spacer));
+                Grid.draw(x, y, spacer, g);
             }
         }
 

@@ -4,48 +4,17 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Block {
-    //Bottom left corner of block
-    private int xCoord;
-    private int yCoord;
+    private int x;
+    private int y;
+    private Color color;
+    private Graphics g;
 
-    private final int sideLen = 80; //size of block TBD
-    private String color; //in the format for Color.decode i.e. #000000 for black
-
-    public Block(int x, int y, String color) {
-        this.xCoord = x;
-        this.yCoord = y;
+    public Block(int x, int y, Color color, Graphics g) {
+        this.x = x;
+        this.y = y;
         this.color = color;
+        this.g = g;
     }
 
-    public int getXCoord() {
-        return this.xCoord;
-    }
 
-    public int getYCoord() {
-        return this.yCoord;
-    }
-
-    // move the block along X axis
-    public boolean setX(int newX) {
-        boolean test = true;
-        if (test/*can move*/) {
-            //move block
-            this.xCoord = newX;
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    // move the block along Y axis
-    public boolean setY(int newY) {
-        boolean test = true;
-        if (test/*can move*/) {
-            //move block
-            this.yCoord = newY;
-            return true;
-        } else {
-            return false;
-        }
-    }
 }
