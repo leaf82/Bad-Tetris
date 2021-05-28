@@ -1,4 +1,7 @@
 import javax.swing.*;
+
+import Tetris_Shapes.*;
+
 import java.awt.*;
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
@@ -13,7 +16,7 @@ public class Screen extends  JPanel implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         // TODO Auto-generated method stub
         y += yVel;
-
+        
         repaint();
     }
 
@@ -27,17 +30,27 @@ public class Screen extends  JPanel implements ActionListener{
         {
             for(int x = getWidth()/2 - (spacer * 5); x < getWidth()/2 + (spacer * 5); x += (spacer))
             {
-                Grid.draw(x, i, spacer, g);
+                Grid.draw(x, y, spacer, g);
             }
         }
 
         /* Making a line piece using a var for the y value
            to allow it to be redrawn and moved
-        */
+        
         g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer, spacer);
         g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer * 2, spacer);
         g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer * 3, spacer);
         g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer * 4, spacer);
+        */
+
+         Straight.draw(getWidth()/2 - (spacer), getHeight()/2 - (spacer * 10) + y, g);
+         Tblock.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+         Square.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+         FrontZ.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+         FrontL.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+         BackZ.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+         BackL.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+
         setForeground(Color.black); // Color of things drawn
 
         // Starts the timer causing the blocks to fall
