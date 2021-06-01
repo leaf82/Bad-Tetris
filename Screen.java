@@ -11,6 +11,7 @@ public class Screen extends  JPanel implements ActionListener{
     private final int spacer = 30;
     Timer time = new Timer(1000, this); 
     int y = 0, yVel = 30; // Starting value and the amount its increased
+    int ran = 0;
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -43,16 +44,28 @@ public class Screen extends  JPanel implements ActionListener{
         g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer * 4, spacer);
         */
 
-        // All ofthe different classes using their draw methods 
-
-         Straight.draw(getWidth()/2 - (spacer), getHeight()/2 - (spacer * 10) + y, g);
-        // Tblock.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
-        // Square.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
-        // FrontZ.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
-        // FrontL.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
-        // BackZ.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
-        // BackL.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
-
+        // Looks to see if the timer if running before getting a piece 
+        if (!time.isRunning()) {
+            ran = (int)(Math.random() * (6));
+        } 
+            
+        // All of the different classes using their draw methods
+        if (ran == 0){
+            Straight.draw(getWidth()/2 - (spacer), getHeight()/2 - (spacer * 10) + y, g);
+        } else if (ran == 1){
+            Tblock.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+        } else if (ran == 2){
+            Square.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+        } else if (ran == 3){
+            FrontZ.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+        } else if (ran == 4){
+            FrontL.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+        } else if (ran == 5){
+            BackZ.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+        } else {
+            BackL.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+        }
+            
         setForeground(Color.black); // Color of things drawn
 
         // Starts the timer causing the blocks to fall
