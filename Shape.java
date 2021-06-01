@@ -23,7 +23,7 @@ public class Shape {
     private int rotation = 0; // count from 0 to 3 for each rotation of the block
 
     public Shape(String block, Grpahics g) {
-
+        
     }
 
     public void draw(Graphics g) {

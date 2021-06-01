@@ -43,13 +43,15 @@ public class Screen extends  JPanel implements ActionListener{
         g.fillRect(getWidth()/2 - (spacer * 5), getHeight()/2 - (spacer * 10) + y, spacer * 4, spacer);
         */
 
+        // All ofthe different classes using their draw methods 
+
          Straight.draw(getWidth()/2 - (spacer), getHeight()/2 - (spacer * 10) + y, g);
-         Tblock.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
-         Square.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
-         FrontZ.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
-         FrontL.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
-         BackZ.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
-         BackL.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+        // Tblock.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+        // Square.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+        // FrontZ.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+        // FrontL.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+        // BackZ.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
+        // BackL.draw(getWidth()/2 - spacer, getHeight()/2 - (spacer * 10) + y, g);
 
         setForeground(Color.black); // Color of things drawn
 
